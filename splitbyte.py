@@ -34,8 +34,8 @@ def splitbyte( file, pattern, verbose=False ):
     check = offset
     break
 
-if verbose: print "found: " 
-return file.read() 
+ if verbose: print "found: " 
+ return file.read() 
 
 if __name__ == "__main__":
  import argparse
