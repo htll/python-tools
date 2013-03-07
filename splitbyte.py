@@ -5,7 +5,7 @@
 __author__ = "S0lll0s"
 __copyright__ = "Sol Bekic, 2013"
 __license__ = "GPL"
-__version__ = "1.0.0"
+__version__ = "1.1.0"
 
 import sys
 
@@ -19,12 +19,12 @@ def splitbyte( file, pattern, verbose=False ):
    if verbose: print 'Nothing found'
    break
 
-  if check > 0: #we need to check the next 'check' bytes
-   if pattern[-check:] in byte[ :check ]: #we found the rest
-    file.seek( -len( pattern ) + check, 1 ) #rewind to the end of the match
+  if check > 0: # we need to check the next 'check' bytes
+   if pattern[-check:] in byte[ :check ]: # we found the rest
+    file.seek( -len( pattern ) + check, 1 ) # rewind to the end of the match
     break
 
-  if pattern in byte: #"full" match, we're at the end of the match already
+  if pattern in byte: # "full" match, we're at the end of the match already
    break
 
   check = 0
@@ -53,4 +53,4 @@ if __name__ == "__main__":
  pattern = ( args.delimiter if args.direct else str( bytearray.fromhex( args.delimiter ) ) )
 
  if args.verbose: print "Pattern: ", ' '.join( hex( ord( x ) )[2:] for x in pattern )
- splitbyte( file, pattern, args.verbose )
+ print splitbyte( file, pattern, args.verbose )
