@@ -1,9 +1,8 @@
 #!/usr/bin/env python
 """  Python tool that gets your external IP. Checks different sites until one works. """
-
+from __future__ import print_function
 import urllib2
 import sys
-from __future__ import print_function
 
 def getIP(URL):
         try:
