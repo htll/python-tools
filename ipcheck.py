@@ -3,14 +3,14 @@
 
 import urllib2
 import sys
+from __future__ import print_function
+
 def getIP(URL):
         try:
                 IP=urllib2.urlopen(URL).read()
-                print("Success on " + URL)
                 print(IP)
                 sys.exit(0)
         except urllib2.URLError:
-                print("Failed on " + URL)
                 return
 
 if __name__ == '__main__':
@@ -22,6 +22,5 @@ if __name__ == '__main__':
         getIP("http://ident.me/")
         getIP("http://ifconifg.me/ip")
         getIP("http://icanhazip.com/")
-
-
-
+        print("ERROR: couldn't find good host", file=sys.stderr)
+        sys.exit(1)
