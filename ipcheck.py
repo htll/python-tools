@@ -6,8 +6,8 @@ import urllib2
 import sys
 
 def usage():
-    print ("Usage: running " + sys.argv[0] + " will try to find a good host from a built in list automatically, ")
-    print("however you can specify your own host to use by using the -u or --url")
+    print ("Usage: running " + sys.argv[0] + " will try to find a good host from a built in list")
+    print("You can specify your own host to use by using the -u or --url")
     print("Example: " + sys.argv[0] + " -u http://ip.telize.com/")
         
 def getIP(URL):
